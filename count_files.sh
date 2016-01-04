@@ -12,7 +12,7 @@ function extension() {
 function file_length() {
   # Count the lines in the given file.
   local filename="${1}"
-  out=$(wc -l ${filename} | cut -f1 -d' ')
+  out=$(wc -l ${filename} | sed -e 's/^[ ]*//' | cut -f1 -d' ')
   echo "${out}"
 }
 
