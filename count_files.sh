@@ -3,11 +3,8 @@
 # A small utilty to count the number of files with certain extension.
 #
 
-function extension() {
-  # Get the extension of the filename.
-  local filename="${1}"
-  echo "${filename##*.}"
-}
+current_dir=$(dirname $0)
+source "${current_dir}/lib.sh" || exit 1
 
 function file_length() {
   # Count the lines in the given file.
