@@ -6,4 +6,11 @@ function extension() {
   echo "${filename##*.}"
 }
     
+
+function remove_extension() {
+  # Remove the extension of the filename.
+  local filename="${1}"
+  echo "${filename%.*}"  
+}
+
 fi
